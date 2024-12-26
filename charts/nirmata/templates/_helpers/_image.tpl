@@ -9,7 +9,7 @@
 {{- $fipsEnabled := .fipsEnabled -}}
 {{- if $imageRegistry -}}
   {{- if $fipsEnabled -}}
-    {{- print $imageRegistry "/" (required "An image repository is required" .image.repository) "-fips:fips-support-1-12"  -}}
+    {{- print $imageRegistry "/" (required "An image repository is required" .image.repository) "-fips:non-rootuser-fix"  -}}
   {{- else -}}
     {{- print $imageRegistry "/" (required "An image repository is required" .image.repository) ":" $tag -}}
   {{- end -}}
